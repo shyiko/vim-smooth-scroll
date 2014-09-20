@@ -47,13 +47,13 @@ function! s:smooth_scroll(dir, dist, duration, speed)
       if at_bottom
         break
       endif
-      exec "normal! ".a:speed."\<C-e>".a:speed."j"
+      exec "normal! ".a:speed."j\<C-e>"
     else
       let at_top = current_window_line == 1 && current_line == 1
       if at_top
         break
       endif
-      exec "normal! ".a:speed."\<C-y>".a:speed."k"
+      exec "normal! ".a:speed."k\<C-y>"
     endif
     redraw
     let elapsed = s:get_ms_since(start)
